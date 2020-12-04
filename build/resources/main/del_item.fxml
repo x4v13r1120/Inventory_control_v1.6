@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="281.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="delItemController">
+   <children>
+      <TextField fx:id="item_id" layoutX="73.0" layoutY="128.0" />
+      <Button layoutX="14.0" layoutY="242.0" mnemonicParsing="false" onAction="#Ret" text="Return" />
+      <Button layoutX="229.0" layoutY="242.0" mnemonicParsing="false" onAction="#Ent" text="Confirm" />
+      <Label fx:id="done" layoutX="151.0" layoutY="209.0" prefHeight="17.0" prefWidth="99.0" />
+      <Label layoutX="68.0" layoutY="92.0" prefHeight="36.0" prefWidth="158.0" text="Please enter Item Id number" />
+   </children>
+</Pane>

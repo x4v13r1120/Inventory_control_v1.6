@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="287.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="addItemController">
+   <TextField fx:id="item_name" layoutX="60.0" layoutY="14.0" prefHeight="37.0" prefWidth="197.0"
+              promptText="Enter Item Name"/>
+   <TextField fx:id="item_type" layoutX="60.0" layoutY="59.0" prefHeight="37.0" prefWidth="197.0"
+              promptText="Enter Item Type"/>
+   <TextField fx:id="price_per_unit" layoutX="60.0" layoutY="104.0" prefHeight="37.0" prefWidth="197.0"
+              promptText="Enter Price per Unit"/>
+   <TextField fx:id="quantity" layoutX="60.0" layoutY="154.0" prefHeight="37.0" prefWidth="197.0"
+              promptText="Enter Quantity"/>
+   <Label fx:id="done" layoutX="151.0" layoutY="209.0" prefHeight="17.0" prefWidth="99.0"/>
+   <Button layoutX="268.0" layoutY="205.0" mnemonicParsing="false" onAction="#Ent" text="Confirm"/>
+   <Button layoutX="8.0" layoutY="205.0" mnemonicParsing="false" onAction="#Ret" text="Return"/>
+</Pane>

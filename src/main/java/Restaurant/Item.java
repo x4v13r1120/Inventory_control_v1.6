@@ -6,10 +6,10 @@ public class Item {
 
     //attributes of item
     private String item_name;
-    private int item_Id;
+    private Integer item_id;
     private BigDecimal price_per_unit;
     private String item_type;
-    private int quantity;
+    private Integer quantity;
 
     //GETTERS AND SETTERS
     public BigDecimal getPricePerUnit() {
@@ -21,11 +21,11 @@ public class Item {
     }
 
     public int getIdNumber() {
-        return item_Id;
+        return item_id;
     }
 
-    public void setIdNumber(int idNumber) {
-        this.item_Id = idNumber;
+    public void setIdNumber(Integer idNumber) {
+        this.item_id = idNumber;
     }
 
     public String getName() {
@@ -36,11 +36,11 @@ public class Item {
         this.item_name = name;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

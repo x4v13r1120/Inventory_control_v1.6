@@ -1,7 +1,11 @@
 package mangement;
 
 import java.math.BigDecimal;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 
 /**
  * Code is from SQLite tutorials
@@ -9,13 +13,14 @@ import java.sql.*;
  * As well as a connection setup to the Database
  */
 
-public abstract class inventoryManagement implements DataBaseManagement {
+public class inventoryManagement {
+
     /**
      * Connect to the database
      *
      * @return the Connection object
      */
-    public Connection connect() {
+    public Connection getConnection() {
         // SQLite connection string
         String url = "jdbc:sqlite:D:\\IdeaProjects\\inventory_Control_v1.6\\src\\database\\inventory";
         Connection conn = null;
@@ -28,30 +33,6 @@ public abstract class inventoryManagement implements DataBaseManagement {
     }
 
     /**
-     * select all rows in the item table
-     */
-    public void selectAll() {
-        String sql = "SELECT * from item ";
-
-        try (Connection conn = this.connect();
-             Statement stmt = conn.createStatement();
-             ResultSet rs = stmt.executeQuery(sql)) {
-
-            // loop through the result set
-            while (rs.next()) {
-                System.out.println("Name: " + rs.getString("item_name") + "\t" +
-                        "Type: " + rs.getString("item_type") + "\t" +
-                        "Price Per Unit: " + rs.getBigDecimal("price_per_unit") + "\t" +
-                        "Quantity: " + rs.getInt("quantity"));
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
-    }
-
-    /**
      * Insert a new row into the items table
      *
      * @param item_name
@@ -59,10 +40,10 @@ public abstract class inventoryManagement implements DataBaseManagement {
      * @param item_type
      * @param quantity
      */
-    public void add(String item_name, BigDecimal price_per_unit, String item_type, int quantity) {
+    public void add(String item_name, BigDecimal price_per_unit, String item_type, Integer quantity) {
         String sql = "INSERT INTO item(item_name, item_Id,price_per_unit,item_type,quantity) VALUES(?,?,?,?,?)";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, item_name);
             pstmt.setBigDecimal(3, price_per_unit);
@@ -82,11 +63,11 @@ public abstract class inventoryManagement implements DataBaseManagement {
      * @param item_type
      * @param quantity
      */
-    public void update(int item_Id, String item_name, BigDecimal price_per_unit, String item_type, int quantity) {
+    public void update(Integer item_Id, String item_name, BigDecimal price_per_unit, String item_type, Integer quantity) {
         String sql = "UPDATE item SET item_name = ? , price_per_unit = ?, item_type = ?, quantity = ?" +
                 " WHERE item_Id = ?";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param
@@ -108,10 +89,10 @@ public abstract class inventoryManagement implements DataBaseManagement {
      *
      * @param item_Id
      */
-    public void delete(int item_Id) {
+    public void delete(Integer item_Id) {
         String sql = "DELETE FROM item WHERE item_Id = ?";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param

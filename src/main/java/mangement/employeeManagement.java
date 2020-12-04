@@ -2,13 +2,13 @@ package mangement;
 
 import java.sql.*;
 
-public abstract class employeeManagement implements DataBaseManagement {
+public class employeeManagement {
     /**
      * Connect to the database
      *
      * @return the Connection object
      */
-    public Connection connect() {
+    public Connection getConnection() {
         // SQLite connection string
         String url = "jdbc:sqlite:D:\\IdeaProjects\\inventory_Control_v1.6\\src\\database\\employees";
         Connection conn = null;
@@ -26,7 +26,7 @@ public abstract class employeeManagement implements DataBaseManagement {
     public void selectAll() {
         String sql = "SELECT * FROM employee ";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -52,7 +52,7 @@ public abstract class employeeManagement implements DataBaseManagement {
     public void add(String first_name, String last_name) {
         String sql = "INSERT INTO employee(first_name,employee_id,last_name) VALUES(?,?,?)";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, first_name);
             pstmt.setString(3, last_name);
@@ -73,7 +73,7 @@ public abstract class employeeManagement implements DataBaseManagement {
         String sql = "UPDATE employee SET first_name = ? , last_name = ?" +
                 " WHERE employee_id = ?";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param
@@ -96,7 +96,7 @@ public abstract class employeeManagement implements DataBaseManagement {
     public void delete(int employee_id) {
         String sql = "DELETE FROM employee WHERE employee_id = ?";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             // set the corresponding param

@@ -5,13 +5,14 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0"
       prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="Controllers.inventoryOptionsController">
-   <Button fx:id="add" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Add" text="1. Add item"/>
-   <Button fx:id="del" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0"
+      fx:controller="inventoryOptionsController">
+   <Button id="add" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Add"
+           text="1. Add item"/>
+   <Button id="del" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Del"
            text="2. Delete item"/>
-   <Button fx:id="edit" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0"
+   <Button id="edit" layoutY="153.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Edit"
            text="3. Edit Item"/>
-   <Button fx:id="view" layoutY="199.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0"
+   <Button id="view" layoutY="199.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#View"
            text="4. View all existing Inventory"/>
-   <Button fx:id="ret" layoutX="118.0" layoutY="249.0" mnemonicParsing="false" text="5. Return"/>
+   <Button id="ret" layoutX="118.0" layoutY="249.0" mnemonicParsing="false" onAction="#Ret" text="5. Return"/>
 </Pane>

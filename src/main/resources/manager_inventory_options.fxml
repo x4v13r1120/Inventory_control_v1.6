@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.Pane?>
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0"
       prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="inventoryOptionsController">
+      fx:controller="inventoryOptionController">
    <Button id="add" layoutY="49.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Add"
            text="1. Add item"/>
    <Button id="del" layoutY="100.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" onAction="#Del"

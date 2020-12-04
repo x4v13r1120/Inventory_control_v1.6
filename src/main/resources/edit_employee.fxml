@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="274.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="editEmployeeController">
+    <Button layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#Ret" text="Return"/>
+    <Button layoutX="237.0" layoutY="235.0" mnemonicParsing="false" onAction="#Ent" text="Confirm"/>
+    <TextField fx:id="employee_id" layoutX="57.0" layoutY="79.0" prefHeight="25.0" prefWidth="181.0"
+               promptText="Enter Employee Number"/>
+    <TextField fx:id="employee_first_name" layoutX="57.0" layoutY="137.0" prefHeight="25.0" prefWidth="181.0"
+               promptText="Enter Employee first name"/>
+    <TextField fx:id="employee_last_name" layoutX="57.0" layoutY="168.0" prefHeight="25.0" prefWidth="181.0"
+               promptText="Enter Employee last name"/>
+    <Label fx:id="done" layoutX="138.0" layoutY="239.0" prefHeight="17.0" prefWidth="99.0"/>
+    <CheckBox fx:id="boolManager" layoutX="57.0" layoutY="200.0" mnemonicParsing="false" prefHeight="17.0"
+              prefWidth="84.0" text="Manager"/>
+    <Label layoutX="65.0" layoutY="110.0" prefHeight="17.0" prefWidth="166.0" text="Type same value If no change"/>
+    <Label layoutX="56.0" layoutY="51.0" prefHeight="17.0" prefWidth="208.0"
+           text="Enter employee id to edit their info."/>
+</Pane>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="employees">
-  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.19">
+  <database-model serializer="dbm" dbms="SQLITE" family-id="SQLITE" format-version="4.20">
     <root id="1">
       <ServerVersion>3.31.1</ServerVersion>
     </root>
@@ -31,53 +31,44 @@
       <Position>3</Position>
       <DataType>VARCHAR|0s</DataType>
     </column>
-    <column id="12" parent="6" name="password">
+    <column id="12" parent="6" name="boolManager">
       <Position>4</Position>
-      <DataType>VARCHAR|0s</DataType>
-    </column>
-    <column id="13" parent="6" name="manager">
-      <Position>5</Position>
       <DataType>BOOLEAN|0s</DataType>
     </column>
-    <index id="14" parent="6" name="employee&apos;s_employee_id_uindex">
+    <index id="13" parent="6" name="employee&apos;s_employee_id_uindex">
       <ColNames>employee_id</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <index id="15" parent="6" name="employee_password_uindex">
-      <ColNames>password</ColNames>
-      <ColumnCollations></ColumnCollations>
-      <Unique>1</Unique>
-    </index>
-    <key id="16" parent="6" name="employee&apos;s_pk">
+    <key id="14" parent="6" name="employee&apos;s_pk">
       <ColNames>employee_id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>employee&apos;s_employee_id_uindex</UnderlyingIndexName>
     </key>
-    <column id="17" parent="7" name="type">
+    <column id="15" parent="7" name="type">
       <Position>1</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="18" parent="7" name="name">
+    <column id="16" parent="7" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="19" parent="7" name="tbl_name">
+    <column id="17" parent="7" name="tbl_name">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="20" parent="7" name="rootpage">
+    <column id="18" parent="7" name="rootpage">
       <Position>4</Position>
       <DataType>int|0s</DataType>
     </column>
-    <column id="21" parent="7" name="sql">
+    <column id="19" parent="7" name="sql">
       <Position>5</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="22" parent="8" name="name">
+    <column id="20" parent="8" name="name">
       <Position>1</Position>
     </column>
-    <column id="23" parent="8" name="seq">
+    <column id="21" parent="8" name="seq">
       <Position>2</Position>
     </column>
   </database-model>

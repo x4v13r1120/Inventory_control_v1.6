@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity"
+      prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="viewEmployeeController">
+    <TableView fx:id="workforce" prefHeight="400.0" prefWidth="700.0">
+        <columns>
+            <TableColumn id="employee_name" fx:id="employee_first_name" prefWidth="130.0" text="employee Name"/>
+            <TableColumn id="employee_type" fx:id="employee_last_name" prefWidth="130.0" text="employee Type"/>
+            <TableColumn id="employee_id" fx:id="employee_id" prefWidth="130.0" text="employee Id"/>
+        </columns>
+    </TableView>
+    <Button layoutX="324.0" layoutY="429.0" mnemonicParsing="false" onAction="#Ret" text="Return"/>
+</Pane>

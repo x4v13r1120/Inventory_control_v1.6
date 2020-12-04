@@ -6,7 +6,7 @@ public class Employee {
     private String employee_first_name;
     private String employee_last_name;
     private String password;
-    private boolean manager;
+    private boolean boolManager;
 
     //this is to check is the user is a manger or not
     public boolean checkPermission() {
@@ -30,12 +30,12 @@ public class Employee {
         this.password = password;
     }
 
-    public boolean isManager() {
-        return manager;
+    public boolean getManager() {
+        return boolManager;
     }
 
     public void setManager(boolean manager) {
-        this.manager = manager;
+        this.boolManager = manager;
     }
 
     public String getEmployee_last_name() {

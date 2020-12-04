@@ -1,10 +1,7 @@
 package mangement;
 
 import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 
 /**
@@ -30,6 +27,29 @@ public class inventoryManagement {
             System.out.println(e.getMessage());
         }
         return conn;
+    }
+
+    public void selectAll() {
+        String sql = "SELECT * FROM item";
+
+        try (Connection conn = this.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                rs.getString("item_name");
+                rs.getInt("item_id");
+                rs.getDouble("price_per_unit");
+                rs.getString("item_type");
+                rs.getInt("quantity");
+
+            }
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 
     /**

@@ -5,8 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-
-public class inventoryOptionsController {
+public class inventoryOptionController {
 
     @FXML
     public void Add(ActionEvent event) throws Exception {
@@ -38,7 +37,7 @@ public class inventoryOptionsController {
     public void View(ActionEvent event) throws Exception {
         Stage stage = Main.getPrimaryStage();
         Parent root = FXMLLoader.load(getClass().getResource("view_item.fxml"));
-        stage.setScene(new Scene(root, 500, 400));
+        stage.setScene(new Scene(root, 700, 500));
         stage.show();
 
 

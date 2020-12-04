@@ -1,6 +1,4 @@
 import Restaurant.Item;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +27,6 @@ public class addItemController {
 
 
     inventoryManagement manager = new inventoryManagement();
-    ObjectProperty<BigDecimal> money = new SimpleObjectProperty<BigDecimal>();
 
 
     @FXML

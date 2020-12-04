@@ -32,9 +32,10 @@ public class employeeManagement {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println("Name: " + rs.getString("first_name")
-                        + "\t" + rs.getString("last_name")
-                        + "\t" + "Quantity: " + rs.getInt("employee_id"));
+                rs.getString("employee_first_name");
+                rs.getString("employee_last_name");
+                rs.getInt("employee_id");
+                rs.getBoolean("boolManager");
             }
 
         } catch (SQLException e) {
@@ -48,14 +49,16 @@ public class employeeManagement {
      *
      * @param first_name
      * @param last_name
+     * @param boolManager
      */
-    public void add(String first_name, String last_name) {
-        String sql = "INSERT INTO employee(first_name,employee_id,last_name) VALUES(?,?,?)";
+    public void add(String first_name, String last_name, Boolean boolManager) {
+        String sql = "INSERT INTO employee(first_name,last_name,boolManager) VALUES(?,?,?)";
 
         try (Connection conn = this.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, first_name);
-            pstmt.setString(3, last_name);
+            pstmt.setString(2, last_name);
+            pstmt.setBoolean(3, boolManager);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());

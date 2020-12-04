@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="274.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editItemController">
+<Pane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+      minWidth="-Infinity" prefHeight="274.0" prefWidth="310.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="editItemController">
    <children>
-      <Button layoutX="14.0" layoutY="210.0" mnemonicParsing="false" onAction="#Ret" text="Return" />
-      <Button layoutX="210.0" layoutY="210.0" mnemonicParsing="false" text="Confirm" />
-      <TextField layoutX="82.0" layoutY="59.0" promptText="Enter Item Name" />
-      <TextField layoutX="82.0" layoutY="95.0" promptText="Enter Item Type" />
-      <TextField layoutX="82.0" layoutY="128.0" promptText="Enter Item Price per Unit" />
-      <TextField layoutX="82.0" layoutY="166.0" promptText="Enter Quantity" />
-      <Label layoutX="95.0" layoutY="22.0" prefHeight="25.0" prefWidth="123.0" text="Leave Blank if No Edit" />
+      <Button layoutX="14.0" layoutY="235.0" mnemonicParsing="false" onAction="#Ret" text="Return"/>
+      <Button layoutX="237.0" layoutY="235.0" mnemonicParsing="false" onAction="#Ent" text="Confirm"/>
+      <TextField fx:id="item_id" layoutX="57.0" layoutY="26.0" prefHeight="25.0" prefWidth="181.0"
+                 promptText="Enter Item Id Number"/>
+      <TextField fx:id="item_name" layoutX="57.0" layoutY="70.0" prefHeight="25.0" prefWidth="181.0"
+                 promptText="Enter Item Name"/>
+      <TextField fx:id="item_type" layoutX="57.0" layoutY="112.0" prefHeight="25.0" prefWidth="181.0"
+                 promptText="Enter Item Type"/>
+      <TextField fx:id="price_per_unit" layoutX="57.0" layoutY="157.0" prefHeight="25.0" prefWidth="181.0"
+                 promptText="Enter Price per Unit"/>
+      <TextField fx:id="quantity" layoutX="57.0" layoutY="201.0" prefHeight="25.0" prefWidth="181.0"
+                 promptText="Enter Quantity"/>
+      <Label fx:id="done" layoutX="138.0" layoutY="239.0" prefHeight="17.0" prefWidth="99.0"/>
+      <Label layoutX="41.0" layoutY="2.0" prefHeight="25.0" prefWidth="228.0" text="Type same value If no change"/>
    </children>
 </Pane>
